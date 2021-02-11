@@ -61,4 +61,9 @@ mv /opt/app-root/temp/list.js /opt/app-root/src/js/list.js
 
 rm -rf /opt/app-root/temp
 
+# Remove documentation and licence
+rm /opt/app-root/src/README.md
+rm /opt/app-root/src/LICENCE 
+rm /opt/app-root/src/.gitignore
+
 echo "done!"
