@@ -10,6 +10,7 @@ document.getElementById("legend-user1").innerHTML = user1_name
 document.getElementById("legend-user2").innerHTML = user2_name
 
 var spendings_request = new XMLHttpRequest();
+spendings_request.withCredentials = true;
 spendings_request.onreadystatechange = function (data) {
     if (data.target.responseText) {
         spendings = JSON.parse(data.target.responseText)
@@ -26,6 +27,7 @@ spendings_request.onreadystatechange = function (data) {
 };
 
 var summary_request = new XMLHttpRequest();
+summary_request.withCredentials = true;
 summary_request.onreadystatechange = function (data) {
     if (data.target.responseText) {
         summary = JSON.parse(data.target.responseText)
@@ -57,21 +59,17 @@ summary_request.onreadystatechange = function (data) {
 
 spendings_request.open('GET', backend_url + "/api/get-spendings");
 spendings_request.setRequestHeader("Authorization", "Basic " + btoa(basic_auth_user + ":" + basic_auth_password));
-spendings_request.responseType = "text"
 spendings_request.send()
 summary_request.open('GET', backend_url + "/api/get-spendings-summary");
 summary_request.setRequestHeader("Authorization", "Basic " + btoa(basic_auth_user + ":" + basic_auth_password));
-summary_request.responseType = "text"
 summary_request.send()
 
 setInterval(function () {
     spendings_request.open('GET', backend_url + "/api/get-spendings");
     spendings_request.setRequestHeader("Authorization", "Basic " + btoa(basic_auth_user + ":" + basic_auth_password));
-    spendings_request.responseType = "text"
     spendings_request.send()
     summary_request.open('GET', backend_url + "/api/get-spendings-summary");
     summary_request.setRequestHeader("Authorization", "Basic " + btoa(basic_auth_user + ":" + basic_auth_password));
-    summary_request.responseType = "text"
     summary_request.send()
     console.log("Refresh")
 }, 600000)
