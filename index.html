@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <link rel=icon href="/css/favicon_list.ico">
+    <title>Kostenzettel</title>
+    <link rel="stylesheet" href="/css/list.css">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <noscript><strong>We're sorry but client doesn't work properly without JavaScript enabled. Please enable it to
+            continue.</strong></noscript>
+
+    <div class="app">
+        <h1>Kostenzettel</h1>
+
+        <div class="table-container">
+            <table id="positionstable"></table>
+        </div>
+
+        <div class="compensation-container">
+            <div class="summary-chart">
+                <div class="summary-bars">
+                    <div id="summary-bar-user2"></div>
+                    <div id="summary-bar-user1"></div>
+                </div>
+                <div class="summary-bottom"></div>
+                <div class="summary-legend-user2"><span id="legend-user2"></span></div>
+                <div class="summary-legend-user1"><span id="legend-user1"></span></div>
+            </div>
+
+            <div class="summary">
+                <div><span id="name-user2">: <span id="sum-user2"></span></div>
+                <div><span id="name-user1">: <span id="sum-user1"></span></div>
+                <div id="compensation-string"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="/js/list.js"></script>
+</body>
+
+</html>

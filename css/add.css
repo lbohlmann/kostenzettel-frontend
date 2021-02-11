@@ -1,0 +1,134 @@
+body {
+    font-family: 'Permanent Marker', cursive;
+}
+
+.app {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+input,  select{
+    width: 100%;
+    background-color: transparent;
+   
+    border-radius: 0; 
+    border: none;
+    border-bottom: 2px solid black;
+
+    color: black; 
+    height: 45px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 30px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+
+input:focus, select:focus, button:focus {
+    outline: none;
+}
+
+input[type=submit], button {
+    padding: 0px 20px;
+    color: black;
+    border: 2px solid black;
+    height: 45px;
+    width: 50%;
+    margin-top: 30px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+button:active {
+    color: white;
+    background-color: black;
+}
+
+.row {
+    display: flex;
+    align-items: flex-end;
+    height: 50px;
+}
+
+.col-spending {
+    width: 50%;
+}
+
+.col-person {
+    width: 30%;
+}
+
+.col-price {
+    width: 20%;
+}
+
+
+.compensation-container {
+    width: 90%;
+    height: 282px;
+    padding: 16px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.summary-chart {
+    width: 250px;
+    height: 255px;
+    position: relative;
+}
+
+.summary-bars {
+    display: flex;
+    height: 219px
+}
+
+#summary-bar-user2 {
+    height: 0px;
+    width: 75px;
+    left: 20px;
+    bottom: 5px;
+    border: 5px solid black;
+    border-bottom: none;
+    position: absolute;
+}
+
+#summary-bar-user1 {
+    height: 0px;
+    width: 75px;
+    left: 145px;
+    bottom: 5px;
+    border: 5px solid black;
+    border-bottom: none;
+    position: absolute;
+}
+
+.summary-bottom {
+    height: 5px;
+    width: 250px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+}
+
+.summary-legend-user2 {
+    font-size: 30px;
+    left: 28px;
+    bottom: -40px;
+    position: absolute;
+}
+
+.summary-legend-user1 {
+    font-size: 30px;
+    left: 163px;
+    bottom: -40px;
+    position: absolute;
+}
+
+.summary {
+    font-size: 35px;
+    position: absolute;
+    right: 0px;
+    bottom: 75px;
+    width: 600px;
+}
