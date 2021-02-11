@@ -63,7 +63,7 @@ rm -rf /opt/app-root/temp
 
 # Remove documentation and licence
 rm /opt/app-root/src/README.md
-rm /opt/app-root/src/LICENCE 
+rm /opt/app-root/src/LICENSE 
 rm /opt/app-root/src/.gitignore
 
 echo "done!"
