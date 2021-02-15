@@ -78,9 +78,14 @@ then
 fi
 
 # Clear logs after reboot of container
-if test -f /var/log/nginx/access.log;
+if test -e /var/log/nginx/access.log;
 then
     rm /var/log/nginx/access.log
+fi
+
+if test -e /var/log/nginx/error.log;
+then
+    rm /var/log/nginx/error.log
 fi
 
 echo "done!"
