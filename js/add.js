@@ -46,7 +46,7 @@ summary_request.onreadystatechange = function (data) {
     }
 };
 
-summary_request.open('GET', "http://" + backend_url + "/api/get-spendings-summary");
+summary_request.open('GET', backend_url + "/api/get-spendings-summary");
 summary_request.setRequestHeader("Authorization", "Basic " + btoa(basic_auth_user + ":" + basic_auth_password));
 summary_request.responseType = "text"
 summary_request.send()
