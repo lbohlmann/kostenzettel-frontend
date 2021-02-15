@@ -77,4 +77,10 @@ then
     rm /opt/app-root/src/.gitignore
 fi
 
+# Clear logs after reboot of container
+if test -f /var/log/nginx/access.log;
+then
+    rm /var/log/nginx/access.log
+fi
+
 echo "done!"
