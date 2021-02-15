@@ -28,12 +28,12 @@ summary_request.onreadystatechange = function (data) {
         if (Math.abs(summary.user2 - summary.user1) > 5) {
             if (summary.user2 > summary.user1) {
                 const difference = (summary.user2 - summary.user1) / 2
-                document.getElementById("compensation-string").innerHTML = difference.toFixed(2) + "€ Ausgleich: " + user1 + "-> " + user2
-                compensation_data = JSON.stringify({ "amount": parseFloat(difference.toFixed(2)), "from_buddy": user1, "to_buddy": user2 })
+                document.getElementById("compensation-string").innerHTML = difference.toFixed(2) + "€ Ausgleich: " + user1_name + "-> " + user2_name
+                compensation_data = JSON.stringify({ "amount": parseFloat(difference.toFixed(2)), "from_buddy": user1_name, "to_buddy": user2_name })
             } else {
                 const difference = (summary.user1 - summary.user2) / 2
-                document.getElementById("compensation-string").innerHTML = difference.toFixed(2) + "€ Ausgleich: " + user2 + " -> " + user1
-                compensation_data = JSON.stringify({ "amount": parseFloat(difference.toFixed(2)), "from_buddy": user2, "to_buddy": user1 })
+                document.getElementById("compensation-string").innerHTML = difference.toFixed(2) + "€ Ausgleich: " + user2_name + " -> " + user1_name
+                compensation_data = JSON.stringify({ "amount": parseFloat(difference.toFixed(2)), "from_buddy": user2_name, "to_buddy": user1_name })
             }
         } else {
             document.getElementById("compensation-string").innerHTML = "Derzeit kein Ausgleich erforderlich"
