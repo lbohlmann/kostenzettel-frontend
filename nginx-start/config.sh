@@ -1,9 +1,9 @@
 # Create basic auth credentials from environment variables
 echo -n "Configure basic authentication.. "
-touch /opt/app-root/.basicauth
-echo -n $BASIC_AUTH_USER >> /opt/app-root/.basicauth
-echo -n ':' >> /opt/app-root/.basicauth
-openssl passwd -apr1 $BASIC_AUTH_PASSWORD >> /opt/app-root/.basicauth
+touch /opt/app-root/etc/.basicauth
+echo -n $BASIC_AUTH_USER >> /opt/app-root/etc/.basicauth
+echo -n ':' >> /opt/app-root/etc/.basicauth
+openssl passwd -apr1 $BASIC_AUTH_PASSWORD >> /opt/app-root/etc/.basicauth
 echo "done!"
 
 # Replace consts in javascript
