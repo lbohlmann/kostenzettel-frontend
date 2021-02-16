@@ -8,58 +8,58 @@ echo "done!"
 
 # Replace consts in javascript
 echo -n "Transfer environment variables to javascript.. "
-mkdir /opt/app-root/temp
-touch /opt/app-root/temp/list.js
+mkdir /opt/app-root/etc/temp
+touch /opt/app-root/etc/temp/list.js
 while IFS="" read -r p || [ -n "$p" ]
 do
     if [[ $p == "const backend_url"* ]] ;
     then
-        echo "const backend_url = '$BACKEND_URL'" >> /opt/app-root/temp/list.js
+        echo "const backend_url = '$BACKEND_URL'" >> /opt/app-root/etc/temp/list.js
     elif [[ $p == *"const user1_name"* ]] ;
     then
-        echo "const user1_name = '$NAME_USER1'" >> /opt/app-root/temp/list.js
+        echo "const user1_name = '$NAME_USER1'" >> /opt/app-root/etc/temp/list.js
     elif [[ $p == *"const user2_name"* ]] ;
     then
-        echo "const user2_name = '$NAME_USER2'" >> /opt/app-root/temp/list.js
+        echo "const user2_name = '$NAME_USER2'" >> /opt/app-root/etc/temp/list.js
     elif [[ $p == *"const basic_auth_user"* ]] ;
     then
-        echo "const basic_auth_user = '$BASIC_AUTH_USER'" >> /opt/app-root/temp/list.js
+        echo "const basic_auth_user = '$BASIC_AUTH_USER'" >> /opt/app-root/etc/temp/list.js
     elif [[ $p == *"const basic_auth_password"* ]] ;
     then
-        echo "const basic_auth_password = '$BASIC_AUTH_PASSWORD'" >> /opt/app-root/temp/list.js
+        echo "const basic_auth_password = '$BASIC_AUTH_PASSWORD'" >> /opt/app-root/etc/temp/list.js
     else
-        printf '%s\n' "$p" >> /opt/app-root/temp/list.js
+        printf '%s\n' "$p" >> /opt/app-root/etc/temp/list.js
     fi
     
 done < /opt/app-root/src/js/list.js
-touch /opt/app-root/temp/add.js
+touch /opt/app-root/etc/temp/add.js
 while IFS="" read -r p || [ -n "$p" ]
 do
     if [[ $p == *"const backend_url"* ]] ;
     then
-        echo "const backend_url = '$BACKEND_URL'" >> /opt/app-root/temp/add.js
+        echo "const backend_url = '$BACKEND_URL'" >> /opt/app-root/etc/temp/add.js
     elif [[ $p == *"const user1_name"* ]] ;
     then
-        echo "const user1_name = '$NAME_USER1'" >> /opt/app-root/temp/add.js
+        echo "const user1_name = '$NAME_USER1'" >> /opt/app-root/etc/temp/add.js
     elif [[ $p == *"const user2_name"* ]] ;
     then
-        echo "const user2_name = '$NAME_USER2'" >> /opt/app-root/temp/add.js
+        echo "const user2_name = '$NAME_USER2'" >> /opt/app-root/etc/temp/add.js
     elif [[ $p == *"const basic_auth_user"* ]] ;
     then
-        echo "const basic_auth_user = '$BASIC_AUTH_USER'" >> /opt/app-root/temp/add.js
+        echo "const basic_auth_user = '$BASIC_AUTH_USER'" >> /opt/app-root/etc/temp/add.js
     elif [[ $p == *"const basic_auth_password"* ]] ;
     then
-        echo "const basic_auth_password = '$BASIC_AUTH_PASSWORD'" >> /opt/app-root/temp/add.js
+        echo "const basic_auth_password = '$BASIC_AUTH_PASSWORD'" >> /opt/app-root/etc/temp/add.js
     else
-        printf '%s\n' "$p" >> /opt/app-root/temp/add.js
+        printf '%s\n' "$p" >> /opt/app-root/etc/temp/add.js
     fi
     
 done < /opt/app-root/src/js/add.js
 
-mv /opt/app-root/temp/add.js /opt/app-root/src/js/add.js
-mv /opt/app-root/temp/list.js /opt/app-root/src/js/list.js
+mv /opt/app-root/etc/temp/add.js /opt/app-root/src/js/add.js
+mv /opt/app-root/etc/temp/list.js /opt/app-root/src/js/list.js
 
-rm -rf /opt/app-root/temp
+rm -rf /opt/app-root/etc/temp
 
 # Remove documentation and licence
 if test -f /opt/app-root/src/README.md;
